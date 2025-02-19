@@ -1,0 +1,94 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(28, 39, 61);
+  height: 1000px;
+}
+
+:root{
+  --background-color: rgb(48, 54, 66);
+  --text-color: white;
+}
+
+.navbar{
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: var(--background-color);
+  height: 70px;
+  padding: 10px 50px;
+  z-index: 100;
+}
+
+::placeholder{
+  color: var(--text-color);
+}
+
+.navbar input{
+  background-color: rgb(28, 39, 61);
+  margin-top: 5px;
+  color: var(--text-color);
+  width: 500px;
+  height: 40px;
+  padding: 0px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+}
+
+.container{
+  margin: 0 auto;
+  width: 1320px;
+  
+}
+
+section{
+  margin-top: 70px;
+  color: var(--text-color);
+}
+
+
+.ul{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  place-items: center;
+}
+
+.ul li{
+  list-style: none;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+  transition: all 0.5s ease;
+  height: 350px;
+}
+
+.ul li:hover{
+  transform: translateY(-10px);
+}
+
+.ul li img{
+  border-radius: 10px 10px 0px 0px;
+  margin-bottom: 20px;
+  display: block;
+  width: 280px;
+  height: 150px;
+}
+
+.ul li div{
+  padding: 0px 25px;
+}
+
+.ul li div h3{
+  margin-bottom: 20px;
+}
+
+.ul li div p{
+  margin: 10px 0px;
+}

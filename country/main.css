@@ -1,0 +1,77 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(28, 39, 61);
+}
+
+.main{
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.img-div img{
+  width: 500px;
+}
+
+.section {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* this row for a tage */
+.div-a{
+  margin-top: 50px;
+}
+
+#back-histry{
+  display: inline-block;
+  background-color: rgb(48, 54, 66);
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  padding: 0px 10px;
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+/* this row for a tage end */
+
+.info{
+  color: white;
+}
+
+.info h3{
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.info p{
+ font-size: 25px;
+ margin: 10px 0px;
+ width: 500px;
+}
+
+.info span{
+  display: inline-block;
+  background-color: rgb(48, 54, 66);
+  margin: 0px 5px;
+  padding: 3px 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 5px 0px;
+}
+
+.info span:hover{
+  background-color: rgb(60, 69, 87);
+}
