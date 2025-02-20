@@ -1,8 +1,10 @@
 class DomCountry {
-  constructor(ul, data, inp) {
+  constructor(ul, data, inp, section,darkMode) {
     this.ul = document.querySelector(ul);
     this.data = data;
     this.inp = document.querySelector(inp);
+    this.sec = document.querySelector(section)
+    this.darkMode = document.querySelector(darkMode)
 
     this.inp.addEventListener("input", () => {
       let searchText = this.inp.value.toLowerCase();
@@ -13,7 +15,39 @@ class DomCountry {
 
       this.createCountries(filtered);
     });
+    
+    this.sec.addEventListener("change", () => {
+
+      if(this.sec.value == ""){
+        this.createCountries(this.data)
+      }else{
+
+        let res = this.data.filter(country => country.region?.toLowerCase() ==  this.sec.value)
+      
+        this.createCountries(res)
+      }
+    });
   }
+
+  darkModeFn(){
+    this.darkMode.addEventListener("click", () => {
+       
+      const root = document.documentElement;
+      let currentBg = getComputedStyle(root).getPropertyValue('--body-bacground-color').trim();
+  
+      if (currentBg === "rgb(28, 39, 61)") {
+        root.style.setProperty('--body-bacground-color', 'white');
+        root.style.setProperty('--background-color', 'rgb(209, 208, 205)');
+        root.style.setProperty('--text-color', 'black');
+      } else {
+        root.style.setProperty('--body-bacground-color', 'rgb(28, 39, 61)');
+        root.style.setProperty('--background-color', 'rgb(48, 54, 66)');
+        root.style.setProperty('--text-color', 'white');
+      }
+    });
+  }
+  
+
 
   createCountries(data = this.data) {
     this.ul.innerHTML = "";
@@ -43,8 +77,9 @@ xhr.onload = function () {
     let countries = JSON.parse(xhr.responseText);
 
 
-    const domObj = new DomCountry(".ul", countries, "#inp");
+    const domObj = new DomCountry(".ul", countries, "#inp", "#regionSelect","#darkMode");
     domObj.createCountries();
+    domObj.darkModeFn()
   } else {
     console.error("Error:", xhr.statusText);
   }

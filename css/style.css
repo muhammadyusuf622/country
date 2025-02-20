@@ -7,23 +7,48 @@
 
 body{
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(28, 39, 61);
+  background-color: var(--body-bacground-color);
   height: 1000px;
+  transition: all 0.5s ease;
 }
 
 :root{
+  --body-bacground-color:rgb(28, 39, 61);
   --background-color: rgb(48, 54, 66);
   --text-color: white;
 }
 
 .navbar{
   position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   top: 0;
   width: 100%;
   background-color: var(--background-color);
   height: 70px;
   padding: 10px 50px;
   z-index: 100;
+  transition: all 0.5s ease;
+}
+
+.nav-select select{
+  color: var(--text-color);
+  background-color: var(--body-bacground-color);
+  padding-left: 10px;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.nav-select button{
+  margin-left: 100px;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bolder;
 }
 
 ::placeholder{
@@ -31,7 +56,7 @@ body{
 }
 
 .navbar input{
-  background-color: rgb(28, 39, 61);
+  background-color: var(--body-bacground-color);
   margin-top: 5px;
   color: var(--text-color);
   width: 500px;
@@ -40,6 +65,7 @@ body{
   border-radius: 5px;
   border: none;
   font-size: 20px;
+  transition: all 0.5s ease;
 }
 
 .container{
